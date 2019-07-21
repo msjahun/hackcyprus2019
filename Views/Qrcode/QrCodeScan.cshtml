@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "qr code scan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Header (v2) -->
+<section class="slice slice-sm bg-gradient-primary header-sm"></section>
+
+<section class="slice slice-lg pt-10 py-10" id="sct-what-we-do">
+
+    <div class="container">
+        <h2 class="font-weight-bold mb-4">Select the text you want to send to the user who owns cars.</h2>
+        <div class="row row-grid col-md-10">
+            <div class="col-lg-4">
+                <img alt="Image placeholder" src="@Url.Content("~/assets/")img/qr.jpg">
+            </div>
+            <div class="col-lg-8">
+                <div class="">
+
+
+                    <h2 class="font-weight-bold">Car type:<span class="text-muted"> Tesla model X</span></h2>
+                    <h2 class="font-weight-bold">Car plate number: <span class="text-muted"> 185A FAM </span></h2>
+
+                    <h2 class="font-weight-bold" id="messageAreaId">Message: <span class="text-muted">Select the message you want to send to the user who has the url</span></h2>
+
+                    <div class="form-group">
+                        <label class="form-control-label">Messages:</label>
+                        <select class="form-control" data-toggle="select" id="selectMessageId" data-live-search="true" >
+                            <option>You have blocked my car, please come and move it.</option>
+                            <option>I accidentally bumped your car, please come so we can settle it.</option>
+                            <option>You parked in a no parking area. Please come and move your car.</option>
+                            <option>You parked in the disabled parking spot, please come and mvoe your car immediately</option>
+                            <option>Parking is not allowed here, you parked on private property</option>
+                            <option>you are not allowed to park here.</option>
+                        </select>
+                    </div>
+
+                    <button class="btn btn-primary btn-block"  type="button">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+
+@section  Scripts {
+    <script>
+
+        $('#selectMessageId').on('change', function() {
+          //  alert(this.value);
+            $('#messageAreaId').html("Message: <span class=\"text-muted\">"+this.value+"</span>");
+        });
+
+    </script>
+}
+
+@section Styles{
+    
+    
+    }

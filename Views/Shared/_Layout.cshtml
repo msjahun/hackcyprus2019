@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,51 +9,108 @@
     <meta name="author" content="Webpixels">
     <title>Parking Alert</title>
     <!-- Favicon -->
-    <link rel="icon" href="../../assets/img/brand/favicon.png" type="image/png">
+    <link rel="icon" href="@Url.Content("/assets/")img/brand/favicon.png" type="image/png">
     <!-- Font Awesome 5 -->
-    <link rel="stylesheet" href="../../assets/libs/@@fortawesome/fontawesome-free/css/all.min.css"><!-- Page CSS -->
-    <link rel="stylesheet" href="../../assets/libs/animate.css/animate.min.css">
-    <link rel="stylesheet" href="../../assets/libs/swiper/dist/css/swiper.min.css">
-    <link rel="stylesheet" href="../../assets/libs/@@fancyapps/fancybox/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="@Url.Content("/assets/")libs/@@fortawesome/fontawesome-free/css/all.min.css"><!-- Page CSS -->
+    <link rel="stylesheet" href="@Url.Content("/assets/")libs/animate.css/animate.min.css">
+    <link rel="stylesheet" href="@Url.Content("/assets/")libs/swiper/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="@Url.Content("/assets/")libs/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="@Url.Content("/assets/")libs/@@fancyapps/fancybox/dist/jquery.fancybox.min.css">
+    @RenderSection("Styles", false)
     <!-- Purpose CSS -->
-    <link rel="stylesheet" href="../../assets/css/purpose.css" id="stylesheet">
+    <link rel="stylesheet" href="@Url.Content("/assets/")css/purpose.css" id="stylesheet">
 </head>
-@RenderBody()
-<footer class="footer footer-dark bg-dark" id="footer-main">
-    <div class="container">
-        
-        <div class="row align-items-center justify-content-md-between py-4 mt-4 delimiter-top">
-            <div class="col-md-6">
-                <div class="copyright text-sm font-weight-bold text-center text-md-left">
-                    &copy; 2019 <a href="" class="font-weight-bold" target="_blank">Team Kibris</a>. All rights reserved.
+
+<header class="header header-transparent" id="header-main">
+    <!-- Topbar -->
+    <div id="navbar-top-main" class="navbar-top  navbar-dark bg-dark border-bottom">
+        <div class="container px-0">
+            <div class="navbar-nav align-items-center">
+                <div class="">
+                    <span class="navbar-text mr-3">Hack cyprus 2019 Parking Alert: project</span>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://dribbble.com/" target="_blank">
-                            <i class="fab fa-dribbble"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="https://instagram.com/" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://facebook.com/" target="_blank">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </li>
-                </ul>
+
+                <div class="ml-auto">
+                    <ul class="nav">
+                        <li class="nav-item dropdown ml-lg-2">
+                            <a class="nav-link px-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="0,10">
+                                <img alt="Image placeholder" src="@Url.Content("~/assets/")img/icons/flags/us.svg">
+                                <span class="d-none d-lg-inline-block">United States</span>
+                                <span class="d-lg-none">EN</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-sm">
+                                <a href="#" class="dropdown-item"><img alt="Image placeholder" src="@Url.Content("~/assets/")img/icons/flags/us.svg">English</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</footer>
+
+</header>
+<body>
+
+
+
+    <div class="main-content">
+        @RenderBody()
+
+
+    </div>
+
+
+
+    <footer class="footer footer-dark bg-dark" id="footer-main">
+        <div class="container">
+
+            <div class="row align-items-center justify-content-md-between py-4 mt-4 delimiter-top">
+                <div class="col-md-6">
+                    <div class="copyright text-sm font-weight-bold text-center text-md-left">
+                        &copy; 2019 <a href="" class="font-weight-bold" target="_blank">Team Kibris</a>. All rights reserved.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://dribbble.com/" target="_blank">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="https://instagram.com/" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://facebook.com/" target="_blank">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
+    <script src="@Url.Content("~/assets/")js/purpose.core.js"></script>
+    <!-- Page JS -->
+    <script src="@Url.Content("~/assets/")libs/swiper/dist/js/swiper.min.js"></script>
+    <script src="@Url.Content("~/assets/")libs/select2/dist/js/select2.min.js"></script>
+    <script src="@Url.Content("~/assets/")libs/autosize/dist/autosize.min.js"></script>
+    <script src="@Url.Content("~/assets/")libs/@@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+    @RenderSection("Scripts", false)
+    <!-- Purpose JS -->
+    <script src="@Url.Content("~/assets/")js/purpose.js"></script>
+    <!-- Demo JS - remove it when starting your project -->
+    <script src="@Url.Content("~/assets/")js/demo.js"></script>
+</body>
+
 
 </html>
